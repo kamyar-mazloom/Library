@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Library Odin</title>
+  <link rel="stylesheet" href="./style.css">
+  <script  src="./Script.js" defer></script>
+</head>
+<body>
+  <div id="overlay">
+    <div class="popUp-form">
+      <h2 class="popUp-header">
+        Add a New Book
+      </h2>
+      <form>
+        <label for="title" class="popUpTitles">Title</label><br></br>
+        <input type="text" id="title" name="title" class="popUptextBox">
+        <br></br>
+        <label for="author"class="popUpTitles">Author</label><br></br>
+        <input type="text" id="author" name="author" class="popUptextBox">
+        <br></br>
+        <label for="pages"class="popUpTitles">Number of Pages</label>
+        <br></br>
+        <input type="number" id="pages" name="pages" class="popUptextBox">
+        <br></br>
+        <label for="read"class="popUpTitles">Status</label><br></br>
+        <select name="read" id="read" class="popUptextBox">
+          <option value="read">I've finished this book</option>
+          <option value="notRead">I've yet to finish this book</option>
+        </select><br></br>
+        <input type="button" value="Submit" class="submitBtn" id="submitBtn-id">
+        <input type="reset" value="Cancel" onclick="off()" class="cancelBtn">      
+      </form>
+    </div>
+  </div>
+  <div class="parent">
+    <div class="header">
+      <div class="title">My Library</div>
+      <button onclick="on()" class="addBtn">Add Book</button>
+    </div>
+    <div class="body" id="body-id"> 
+      <div class="card">
+        <h2 class="book-title">
+          CATCH-22
+        </h2>
+        <span class="book-author">
+          <span>By: </span>
+          Joseph Heller
+        </span>
+        <span class="book-page">
+          <span>Number of pages: </span>
+          453
+        </span>
+        <span class="status">
+          <span>toggle as read</span>
+        </span>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label> 
+      </div>
+    </div>
+  </div>
+</body>
+</html>
