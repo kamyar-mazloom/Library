@@ -3,6 +3,12 @@ let myLibrary = [
   {title: 'CATCH-22', author: 'Joseph Heller', pages: '453', read: 'read'},
   {title: "Cat's Cradle", author: 'Kurt Vonnegut', pages: '304', read: 'read'}
 ];
+//Remove child nodes 
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
+}
 // Object to array
 function addBookToLibrary() {
   let books = {
@@ -33,8 +39,7 @@ function on() {
 function off() {
   document.getElementById("overlay").style.display = "none";
 } 
-//close function
-event
+
 // Card creation 
 function cardCreation (){
 for (let i=0; i<myLibrary.length; i++){
@@ -42,7 +47,6 @@ for (let i=0; i<myLibrary.length; i++){
   
   let domCard = document.createElement("div")
   domCard.setAttribute("class","card")
-  domCard.setAttribute("id", i)
   domBody.append(domCard)
 
   let domTitle = document.createElement("H2")
@@ -80,21 +84,17 @@ for (let i=0; i<myLibrary.length; i++){
   let domClose = document.createElement("button")
   domClose.setAttribute("class","closeBtn")
   domClose.setAttribute("id", i)
+  domClose.setAttribute("onclick","closeFnc(this.id)")
   domClose.innerHTML = "x";
   domCard.append(domClose)
 }}
 window.onload = cardCreation()
-//Remove child nodes 
-function removeAllChildNodes(parent) {
-  while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
+window.onload = off()
+///close function 
+function closeFnc(clicked_id) {
+  myLibrary.splice(clicked_id,1)
+    let domBody = document.getElementById("body-id");
+    removeAllChildNodes(domBody)
+  cardCreation()
   }
-}
 
-let buttons = document.getElementsByTagName("button");
-let buttonsCount = buttons.length;
-for (let i = 0; i < buttonsCount; i++) {
-    buttons[i].onclick = function(e) {
-        alert(this.id);
-    };
-}
