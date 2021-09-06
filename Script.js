@@ -1,7 +1,7 @@
 // Array
 let myLibrary = [
   {title: 'CATCH-22', author: 'Joseph Heller', pages: '453', read: 'read'},
-  {title: "Cat's Cradle", author: 'Kurt Vonnegut', pages: '304', read: 'read'}
+  {title: "Cat's Cradle", author: 'Kurt Vonnegut', pages: '304', read: 'notRead'}
 ];
 //Remove child nodes 
 function removeAllChildNodes(parent) {
@@ -64,6 +64,19 @@ for (let i=0; i<myLibrary.length; i++){
   domPages.innerHTML = "<span>Number of pages: </span>" + myLibrary[i].pages;
   domCard.append(domPages)
 
+  let domStatus = document.createElement("button")
+  domStatus.setAttribute("class","book-status")
+  domCard.append(domStatus)
+  domStatus.setAttribute("id", i)
+  domStatus.setAttribute("onclick","checkFnc(this.id)")
+  if (myLibrary[i].read === "read") {
+    domStatus.innerHTML = "Read"
+    domStatus.style.backgroundColor = '#2e9419';
+  } else {
+    domStatus.innerHTML = "Not Read"
+    domStatus.style.backgroundColor = '#942319';
+  }
+
   let domClose = document.createElement("button")
   domClose.setAttribute("class","closeBtn")
   domClose.setAttribute("id", i)
@@ -81,3 +94,16 @@ function closeFnc(clicked_id) {
   cardCreation()
   }
 ///check-uncheck function 
+function checkFnc(clicked_id) {
+  if (myLibrary[clicked_id].read =="read") {
+  myLibrary[clicked_id].read ="unRead"
+    let domBody = document.getElementById("body-id");
+    removeAllChildNodes(domBody)
+  cardCreation()
+  }
+  else{
+    myLibrary[clicked_id].read ="read"
+    let domBody = document.getElementById("body-id");
+    removeAllChildNodes(domBody)
+  cardCreation()
+  }}
