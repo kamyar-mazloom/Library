@@ -64,23 +64,6 @@ for (let i=0; i<myLibrary.length; i++){
   domPages.innerHTML = "<span>Number of pages: </span>" + myLibrary[i].pages;
   domCard.append(domPages)
 
-  let domStatus = document.createElement("span")
-  domStatus.setAttribute("class","status")
-  domStatus.innerHTML = "<span>toggle as read<span>"
-  domCard.appendChild(domStatus)
-
-  let domSwitch = document.createElement("label")
-  domSwitch.setAttribute("class","switch")
-  domCard.appendChild(domSwitch)
-
-  let domCheckbox = document.createElement("input")
-  domCheckbox.setAttribute("type","checkbox")
-  domSwitch.appendChild(domCheckbox)
-
-  let domSlider = document.createElement("span")
-  domSlider.setAttribute("class","slider round")
-  domSwitch.appendChild(domSlider)
-
   let domClose = document.createElement("button")
   domClose.setAttribute("class","closeBtn")
   domClose.setAttribute("id", i)
@@ -97,4 +80,4 @@ function closeFnc(clicked_id) {
     removeAllChildNodes(domBody)
   cardCreation()
   }
-
+///check-uncheck function 
