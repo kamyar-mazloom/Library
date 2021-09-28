@@ -7,4 +7,4 @@ The goal was to learn and practice with objects, object prototypes, inheritance 
 The project has no back-end so the library will reset after refreshing the page.
 [Live Demo](https://kamyar-mazloom.github.io/Library/) :point_left:
 
-![Library Demo](demo/library-demo.gif)
+![Library Demo](demo/library.gif)
